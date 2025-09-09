@@ -28,7 +28,7 @@ public class ManagerController {
 	@Autowired
 	private ProductService productService; 
 
-	@PostMapping("/registerEmployee")
+	@PostMapping("/addEmployee")
 	public ResponseEntity<Employee> registerEmployee(@RequestBody Employee employee){
 		return ResponseEntity.ok(employeeService.saveEmployee(employee));
 	}

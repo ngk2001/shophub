@@ -5,11 +5,13 @@ package com.shophub.controller;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
 @RestController
+@RequestMapping("/")
 public class HomeController {
 
     @GetMapping("/shophub")
@@ -28,10 +30,10 @@ public class HomeController {
                 "/shophub/product/serialId/{serialId}",
                 "/shophub/product/category/{category}",
                 "/shophub/product/brand/{brand}",
-                "/shophub/product/location?branch=...&drawName=..."
+                "/shophub/product/location?branch=...&drawerName=..."
             },
             "manager_access", new String[]{
-                "/shophub/manager/registerEmployee",
+                "/shophub/manager/addEmployee",
                 "/shophub/manager/allEmployees",
                 "/shophub/manager/deleteEmployee/{id}",
                 "/shophub/manager/modifyEmployee",

@@ -56,9 +56,9 @@ public class ProductController {
         }
 
     @GetMapping("/location")
-    public ResponseEntity<?> getByLocation(@RequestParam String branch, @RequestParam String drawName) {
+    public ResponseEntity<?> getByLocation(@RequestParam String branch, @RequestParam String drawerName) {
     	try {
-        	List<Product> products = productService.getProductsByBranchAndDrawName(branch, drawName);
+        	List<Product> products = productService.getProductsByBranchAndDrawName(branch, drawerName);
             return ResponseEntity.ok(products);
         }catch(RuntimeException e) {
         	return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());

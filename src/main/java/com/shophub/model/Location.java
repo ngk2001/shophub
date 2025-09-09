@@ -5,23 +5,23 @@ import jakarta.persistence.Embeddable;
 @Embeddable
 public class Location {
 	private String branch;
-	private String drawName;
+	private String drawerName;
 	public String getBranch() {
 		return branch;
 	}
 	public void setBranch(String branch) {
 		this.branch = branch;
 	}
-	public String getDrawName() {
-		return drawName;
+	public String getDrawerName() {
+		return drawerName;
 	}
-	public void setDrawName(String drawName) {
-		this.drawName = drawName;
+	public void setDrawerName(String drawerName) {
+		this.drawerName = drawerName;
 	}
-	public Location(String branch, String drawName) {
+	public Location(String branch, String drawerName) {
 		super();
 		this.branch = branch;
-		this.drawName = drawName;
+		this.drawerName = drawerName;
 	}
 	public Location() {
 		super();

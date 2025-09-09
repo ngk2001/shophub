@@ -17,7 +17,8 @@ public class SecurityConfig{
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       return  http
-       
+    		  .csrf(csrf -> csrf.disable())
+    		  .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
               .authorizeHttpRequests(auth -> auth
               .requestMatchers("/shophub").permitAll()
               .requestMatchers("/shophub/manager/**").hasRole("MANAGER")
@@ -26,7 +27,7 @@ public class SecurityConfig{
               .httpBasic(Customizer.withDefaults())
              .build();
       }
-   
+    
 
     @Bean
     public PasswordEncoder passwordEncoder() {

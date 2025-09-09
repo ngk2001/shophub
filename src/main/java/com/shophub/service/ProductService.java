@@ -36,8 +36,8 @@ public class ProductService {
 	}
 
 
-	public List<Product> getProductsByBranchAndDrawName(String branch, String drawName) {
-		List<Product> products = productRepo.findAllByLocationBranchAndLocationDrawName(branch, drawName);
+	public List<Product> getProductsByBranchAndDrawName(String branch, String drawerName) {
+		List<Product> products = productRepo.findAllByLocationBranchAndLocationDrawerName(branch, drawerName);
 		if(products.isEmpty()) {
 			throw new RuntimeException("Product not found in this location");
 		}
