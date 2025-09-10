@@ -20,7 +20,8 @@ public class SecurityConfig{
     		  .csrf(csrf -> csrf.disable())
     		  .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
               .authorizeHttpRequests(auth -> auth
-              .requestMatchers("/shophub").permitAll()
+              .requestMatchers("/","/shophub").permitAll()
+              .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
               .requestMatchers("/shophub/manager/**").hasRole("MANAGER")
               .requestMatchers("/shophub/product/**").hasAnyRole("MANAGER","EMPLOYEE")
               .anyRequest().authenticated())
